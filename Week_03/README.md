@@ -1,3 +1,3 @@
 ### Week 3 code samples
 
-(coming soon)
+(samples will be posted soon)
