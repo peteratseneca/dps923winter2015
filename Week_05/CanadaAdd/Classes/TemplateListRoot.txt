@@ -1,0 +1,89 @@
+// Replace 'import Foundation' with the code below
+// After copy-paste... select all, then Ctrl+I to re-format
+
+import UIKit
+import CoreData
+
+// Notice the protocol conformance
+class XXXXXList: UITableViewController, NSFetchedResultsControllerDelegate {
+
+// MARK: - Private properties
+
+var frc: NSFetchedResultsController!
+
+// MARK: - Properties
+
+// Passed in by the app delegate during app initialization
+var model: Model!
+
+// MARK: - View lifecycle
+
+override func viewDidLoad() {
+super.viewDidLoad()
+
+// Configure and load the fetched results controller (frc)
+
+frc = model.frc_xxxxx
+
+// This controller will be the frc delegate
+frc.delegate = self;
+// No predicate (which means the results will NOT be filtered)
+frc.fetchRequest.predicate = nil;
+
+// Create an error object
+var error: NSError? = nil
+// Perform fetch, and if there's an error, log it
+if !frc.performFetch(&error) { println(error?.description) }
+}
+
+// MARK: - Table view methods
+
+override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+
+return self.frc.sections?.count ?? 0
+}
+
+override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+let sectionInfo = self.frc.sections![section] as NSFetchedResultsSectionInfo
+return sectionInfo.numberOfObjects
+}
+
+override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+
+self.configureCell(cell, atIndexPath: indexPath)
+
+return cell
+}
+
+func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+
+// Get the item for the selected index path
+let item = frc.objectAtIndexPath(indexPath) as xxxxx
+// Configure the cell contents
+cell.textLabel!.text = item.propertyName
+}
+
+// MARK: - Navigation
+
+override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+if segue.identifier == "toXXXXXDetail" {
+
+// Get a reference to the destination view controller
+let vc = segue.destinationViewController as xxxxx
+
+// From the data source (the fetched results controller)...
+// Get a reference to the object for the tapped/selected table view row
+let item = frc.objectAtIndexPath(self.tableView.indexPathForSelectedRow()!) as xxxxx
+
+// Pass on the object
+vc.detailItem = item
+
+// Configure the view if you wish
+vc.title = item.propertyName
+}
+}
+}
