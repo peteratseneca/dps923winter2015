@@ -17,4 +17,4 @@ Read more about this topic here:
 https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html
 
 A brief video shows you how to begin building this project:
-(url to come)
+https://www.youtube.com/watch?v=tFmouhgb0uo
