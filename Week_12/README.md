@@ -24,3 +24,7 @@ Features:
 - a single tap brings the shape to the foreground (the top of the view hierarchy)
 - a double tap (with one finger) grows the shape by 10%
 - a two-finger tap shrinks the shape by 10%
+
+**Shapes version 4**
+
+Based on the 'version 3' app above. Adds the ability to work with images, instead of drawn shapes.
