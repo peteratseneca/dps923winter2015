@@ -14,7 +14,6 @@
 		D03839D81AD1928E008BF84D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03839D61AD1928E008BF84D /* LaunchScreen.xib */; };
 		D03839E41AD1928E008BF84D /* NewShapesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03839E31AD1928E008BF84D /* NewShapesTests.swift */; };
 		D03839EE1AD196A1008BF84D /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03839ED1AD196A1008BF84D /* Shape.swift */; };
-		D03839F01AD19F57008BF84D /* Flurb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03839EF1AD19F57008BF84D /* Flurb.swift */; };
 		D03839F21AD1BBE1008BF84D /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = D03839F11AD1BBE1008BF84D /* Readme.txt */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 		D03839E21AD1928E008BF84D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03839E31AD1928E008BF84D /* NewShapesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShapesTests.swift; sourceTree = "<group>"; };
 		D03839ED1AD196A1008BF84D /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
-		D03839EF1AD19F57008BF84D /* Flurb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flurb.swift; sourceTree = "<group>"; };
 		D03839F11AD1BBE1008BF84D /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +89,6 @@
 				D03839D61AD1928E008BF84D /* LaunchScreen.xib */,
 				D03839CB1AD1928E008BF84D /* Supporting Files */,
 				D03839ED1AD196A1008BF84D /* Shape.swift */,
-				D03839EF1AD19F57008BF84D /* Flurb.swift */,
 			);
 			path = NewShapes;
 			sourceTree = "<group>";
@@ -223,7 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03839D01AD1928E008BF84D /* Shapes.swift in Sources */,
-				D03839F01AD19F57008BF84D /* Flurb.swift in Sources */,
 				D03839EE1AD196A1008BF84D /* Shape.swift in Sources */,
 				D03839CE1AD1928E008BF84D /* AppDelegate.swift in Sources */,
 			);

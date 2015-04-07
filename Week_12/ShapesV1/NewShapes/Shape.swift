@@ -21,6 +21,7 @@ class Shape: UIView {
         
         super.init(frame: frame)
         
+        // This is necessary (leave it out and you'll see why)
         self.backgroundColor = UIColor.clearColor()
     }
     
