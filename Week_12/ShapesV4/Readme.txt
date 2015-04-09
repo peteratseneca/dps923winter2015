@@ -5,6 +5,10 @@ It is based on the Shapes V3 app.
 
 The app uses images instead of drawn shapes.
 
+Includes pinch and zoom.
+
+Includes rotate.
+
 ~~~~~
 
 Previous version features:

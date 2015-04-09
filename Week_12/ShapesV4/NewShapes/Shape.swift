@@ -38,6 +38,14 @@ class Shape: UIView {
         tapTwo.numberOfTouchesRequired = 2
         self.addGestureRecognizer(tapTwo)
         
+        // Handle pinch and zoom
+        let pinchZoom = UIPinchGestureRecognizer(target: self, action: "pinchZoomHandler:")
+        self.addGestureRecognizer(pinchZoom)
+        
+        // Handle rotation
+        let rotate = UIRotationGestureRecognizer(target: self, action: "rotateHandler:")
+        self.addGestureRecognizer(rotate)
+        
         // Enable multi-touch on this view
         self.multipleTouchEnabled = true
     }
@@ -105,5 +113,21 @@ class Shape: UIView {
         
         // Shrink the shape by 10%
         var shapeNewFrame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.width / 1.1, self.frame.height / 1.1)
-        self.frame = shapeNewFrame    }
+        self.frame = shapeNewFrame
+    }
+    
+    func pinchZoomHandler(recognizer: UIPinchGestureRecognizer) {
+        
+        // Handle pinch or zoom
+        recognizer.view!.transform = CGAffineTransformScale(recognizer.view!.transform, recognizer.scale, recognizer.scale)
+        recognizer.scale = 1
+    }
+    
+    func rotateHandler(recognizer: UIRotationGestureRecognizer) {
+        
+        // Handle rotation
+        recognizer.view!.transform = CGAffineTransformRotate(recognizer.view!.transform, recognizer.rotation);
+        recognizer.rotation = 0;
+    }
+    
 }
