@@ -78,13 +78,20 @@ class MyLocation: UIViewController, CLLocationManagerDelegate {
         case .Denied:
             println("denied")
         
+        // The following will not compile on the College Macs, which have Xcode 6.1.x
+        // If you have your own Mac, you can activate the statements
+        /*
         case .AuthorizedAlways:
             println("authorized always")
+        */
         
         case .AuthorizedWhenInUse:
             println("authorized when in use")
             myMap.showsUserLocation = true
             manager.startUpdatingLocation()
+            
+        default:
+            break
         }
     }
     
