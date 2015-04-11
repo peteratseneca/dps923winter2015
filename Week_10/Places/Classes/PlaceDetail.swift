@@ -29,39 +29,24 @@ class PlaceDetail: UIViewController {
         let address = self.item.address
         print("Item: \(address)\n")
         
+        // Forward geocoder tasks
         
-        // Geocoder
-        
+        // Create a geocoder object
         let geocoder = CLGeocoder()
         
+        // Use the Apple Maps web service to fetch a 'placemark' object
         geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
             
+            // Work with the first placemark that is returned
             if let pm = placemarks?[0] as? CLPlacemark {
                 
+                // Configure the map to be centered on the placemark's location coordinate
                 self.map.region = MKCoordinateRegionMakeWithDistance(pm.location.coordinate, 2000, 2000)
                 
+                // Drop a red pin on the map
                 self.map.addAnnotation(MKPlacemark(placemark: pm))
             }
         })
-
-        /*
-
-        geocoder.geocodeAddressString(address, completionHandler: {(placemarks: [AnyObject]!, error: NSError!) -> Void in
-        
-        if let pm = placemarks?[0] as? CLPlacemark {
-        self.map.addAnnotation(MKPlacemark(placemark: pm))
-        }
-        })
-
-        */
-        
-        //        geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) in
-        //
-        //            if let pm: CLPlacemark = placemarks?[0] {
-        //
-        //                self.map.addAnnotation(MKPlacemark(placemark: pm))
-        //            }
-        //        })
     }
     
 }
